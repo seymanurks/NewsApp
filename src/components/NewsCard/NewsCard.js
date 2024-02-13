@@ -6,12 +6,19 @@ import {
 } from "react-native";
 import styles from "./NewsCard.style"
 
-const NewsCard = () => {
+const NewsCard = ({news}) => {
+    console.log(news)
     return(
         <View style = {styles.container}>
-            <İmage style = {styles.image}/>
-            <Text style = {styles.title}></Text> 
-            <Text style = {styles.description}></Text>
+            <Image 
+            style = {styles.image}
+            source = {{uri: news.imageUrl}}
+            />
+            <View style = {styles.text}>
+            <Text style = {styles.title}>{news.title}</Text> 
+            <Text style = {styles.description}>{news.description}</Text>
+            <Text style = {styles.author}>{news.author}</Text>
+            </View>
         </View>
     )
 }
